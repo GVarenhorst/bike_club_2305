@@ -18,7 +18,13 @@ RSpec.describe Ride do
       expect(@ride2.name).to eq("Town Lake")
       expect(@ride1.terrain).to eq(:hills)
       expect(@ride2.terrain).to eq(:gravel)
-
     end
+
+    it "can recognize a loop" do
+      expect(@ride1.loop?).to eq(false)
+      expect(@ride2.loop?).to eq(true)
+    end
+
+
   end
 end
