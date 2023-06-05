@@ -14,4 +14,12 @@ class Ride
     @loop 
   end
   
+  def total_distance
+    base_distance = @distance
+    if loop? == false
+      base_distance + base_distance
+    else
+      base_distance
+    end
+  end
 end
