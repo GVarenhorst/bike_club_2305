@@ -17,5 +17,12 @@ RSpec.describe Biker do
       expect(@biker1.max_distance).to eq(30)
       expect(@biker2.max_distance).to eq(15)
     end
+
+    it "can learn terrain and add to array" do
+      @biker1.learn_terrain!(:gravel)
+      @biker1.learn_terrain!(:hills)
+
+      expect(@biker1.acceptable_terrain).to eq([:gravel, :hills])
+    end
   end
 end
