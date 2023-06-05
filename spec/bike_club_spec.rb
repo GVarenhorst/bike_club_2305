@@ -16,5 +16,25 @@ RSpec.describe BikeClub do
 
       expect(@bike_club).to be_an_instance_of(BikeClub)
     end
+
+    it "can add bikers to the club" do
+
+      @bike_club.add_roster(@biker1)
+      @bike_club.add_roster(@biker2)
+
+      expect(@bike_club.roster).to eq([@biker1, @biker2])
+    end
+
+    it 'can return the biker with the most rides' do
+      @biker1.log_ride(@ride1, 92.5)
+      @biker1.log_ride(@ride1, 91.1)
+      @biker1.log_ride(@ride2, 60.9)
+      @biker1.log_ride(@ride2, 61.6)
+
+      @biker2.log_ride(@ride1, 97.0)
+      @biker2.log_ride(@ride2, 67.0)
+
+      expect(@roster.most_rides).to eq([@biker1])
+    end
   end
 end
