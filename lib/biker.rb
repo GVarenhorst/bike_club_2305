@@ -16,6 +16,10 @@ class Biker
   end
 
   def log_ride(name, ride_time)
+    if @acceptable_terrain.include?(ride[:terrain])
     @rides[name] << ride_time
+    else
+      nil
+    end
   end
 end

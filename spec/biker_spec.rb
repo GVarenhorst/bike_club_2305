@@ -38,6 +38,13 @@ RSpec.describe Biker do
       @ride2 => [60.9, 61.6]
     }
     expect(@biker1.rides).to eq(expected1)
+
+    @biker2.log_ride(@ride1, 97.0)
+    @biker2.log_ride(@ride2, 67.0)
+    require 'pry'; binding.pry
+    expect(@biker2.rides).to eq({})
     end
+    
   end
+
 end
