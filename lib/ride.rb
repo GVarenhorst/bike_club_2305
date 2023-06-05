@@ -9,4 +9,9 @@ class Ride
     @loop = info[:loop]
     @terrain = info[:terrain]
   end
+
+  def loop?
+    @loop 
+  end
+  
 end
